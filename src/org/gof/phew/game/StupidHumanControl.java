@@ -1,11 +1,11 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 
 import org.andengine.extension.physics.box2d.util.Vector2Pool;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.util.debug.Debug;
+import org.gof.phew.game.controls.BaseOnScreenControl;
 
-import zaki.yokozuna.controls.BaseOnScreenControl;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;

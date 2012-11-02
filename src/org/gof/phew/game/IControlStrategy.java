@@ -1,4 +1,4 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 import org.andengine.engine.handler.IUpdateHandler;
 import org.andengine.input.touch.TouchEvent;

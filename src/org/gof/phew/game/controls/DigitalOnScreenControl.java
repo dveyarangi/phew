@@ -1,4 +1,4 @@
-package zaki.yokozuna.controls;
+package org.gof.phew.game.controls;
 
 import org.andengine.entity.scene.Scene;
 import org.andengine.opengl.texture.region.ITextureRegion;

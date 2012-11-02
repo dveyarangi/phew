@@ -1,4 +1,4 @@
-package zaki.yokozuna.texture;
+package org.gof.phew.game.texture;
 
 import java.io.IOException;
 

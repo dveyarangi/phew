@@ -1,4 +1,4 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 import static org.andengine.extension.physics.box2d.util.constants.PhysicsConstants.PIXEL_TO_METER_RATIO_DEFAULT;
 
@@ -17,11 +17,11 @@ import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.Constants;
 import org.andengine.util.debug.Debug;
 import org.andengine.util.math.MathUtils;
+import org.gof.phew.game.controls.AnalogOnScreenControl;
+import org.gof.phew.game.controls.AnalogOnScreenControl.IAnalogOnScreenControlListener;
+import org.gof.phew.game.texture.TextureException;
+import org.gof.phew.game.texture.TextureManager;
 
-import zaki.yokozuna.controls.AnalogOnScreenControl;
-import zaki.yokozuna.controls.AnalogOnScreenControl.IAnalogOnScreenControlListener;
-import zaki.yokozuna.texture.TextureException;
-import zaki.yokozuna.texture.TextureManager;
 import android.opengl.GLES20;
 
 import com.badlogic.gdx.math.Vector2;
@@ -34,12 +34,12 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef;
 
 
-public class ToxFactory
+public class PhewFactory
 {
 
 	VertexBufferObjectManager vertexManager;
 	
-	ToxActivity activity;
+	PhewActivity activity;
 	
 	final static FixtureDef BRICK_FIXTURE_DER = PhysicsFactory.createFixtureDef(10, 0.2f, 0.9f);
 	final static FixtureDef BALL_FIXTURE_DER = PhysicsFactory.createFixtureDef(20, 0.5f, 0.5f);
@@ -63,7 +63,7 @@ public class ToxFactory
 	
 	private int ballsCount = 0;
 	
-	public void init(final ToxActivity activity) 
+	public void init(final PhewActivity activity) 
 	{
 //		BitmapTextureAtlasTextureRegionFactory.setAssetBasePath("gfx/");
 		this.activity = activity;
@@ -140,7 +140,7 @@ public class ToxFactory
 		}		
 		
 		Sprite movingShape = createSprite( x, y, region );
-		final Body movingBody = ToxFactory.createBucketBody(activity.getPhysics(), movingShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
+		final Body movingBody = PhewFactory.createBucketBody(activity.getPhysics(), movingShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
 		IAreaShape anchorShape = new Rectangle(movingShape.getX(), movingShape.getY()-movingShape.getHeight()/2,1,1, vertexManager);
 		final Body anchorBody = PhysicsFactory.createBoxBody(activity.getPhysics(), anchorShape, BodyType.StaticBody, BRICK_FIXTURE_DER);
 		
@@ -183,18 +183,18 @@ public class ToxFactory
 		ballsCount ++;
 		
 		Sprite bellyShape = createSprite( x, y, FATNESS, FATNESS, region);
-		final Body bellyBody = ToxFactory.createCircleBody( activity.getPhysics(), bellyShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
+		final Body bellyBody = PhewFactory.createCircleBody( activity.getPhysics(), bellyShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
 		bellyBody.setLinearDamping( 1f );
 		bellyBody.setAngularDamping( 1f );
 		activity.getPhysics().registerPhysicsConnector(new PhysicsConnector(bellyShape, bellyBody, true, true));
 		
 		
 		Sprite leftArmShape = createSprite( x-FATNESS/2, y, FATNESS/2, FATNESS/2, region );
-		final Body leftArmBody = ToxFactory.createCircleBody( activity.getPhysics(), leftArmShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
+		final Body leftArmBody = PhewFactory.createCircleBody( activity.getPhysics(), leftArmShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
 		activity.getPhysics().registerPhysicsConnector(new PhysicsConnector(leftArmShape, leftArmBody, true, true));
 		
 		Sprite rightArmShape = createSprite( x+FATNESS/2, y, FATNESS/2, FATNESS/2,region );
-		final Body rightArmBody = ToxFactory.createCircleBody( activity.getPhysics(), rightArmShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
+		final Body rightArmBody = PhewFactory.createCircleBody( activity.getPhysics(), rightArmShape, BodyType.DynamicBody, BRICK_FIXTURE_DER);
 		activity.getPhysics().registerPhysicsConnector(new PhysicsConnector(rightArmShape, rightArmBody, true, true));
 		
 		

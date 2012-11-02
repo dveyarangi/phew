@@ -1,4 +1,4 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 import static org.andengine.extension.physics.box2d.util.constants.PhysicsConstants.PIXEL_TO_METER_RATIO_DEFAULT;
 

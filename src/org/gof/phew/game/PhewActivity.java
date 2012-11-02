@@ -1,4 +1,4 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 import static org.andengine.extension.physics.box2d.util.constants.PhysicsConstants.PIXEL_TO_METER_RATIO_DEFAULT;
 
@@ -22,10 +22,10 @@ import org.andengine.input.touch.controller.MultiTouchController;
 import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.ui.activity.SimpleBaseGameActivity;
+import org.gof.phew.game.controls.AnalogOnScreenControl;
+import org.gof.phew.game.controls.BaseOnScreenControl;
+import org.gof.phew.game.controls.AnalogOnScreenControl.IAnalogOnScreenControlListener;
 
-import zaki.yokozuna.controls.AnalogOnScreenControl;
-import zaki.yokozuna.controls.AnalogOnScreenControl.IAnalogOnScreenControlListener;
-import zaki.yokozuna.controls.BaseOnScreenControl;
 import android.view.Display;
 
 import com.badlogic.gdx.math.Vector2;
@@ -40,7 +40,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
  * @author Nicolas Gramlich
  * @since 18:47:08 - 19.03.2010
  */
-public class ToxActivity extends SimpleBaseGameActivity implements IAccelerationListener, IOnSceneTouchListener {
+public class PhewActivity extends SimpleBaseGameActivity implements IAccelerationListener, IOnSceneTouchListener {
 	// ===========================================================
 	// Constants
 	// ===========================================================
@@ -53,7 +53,7 @@ public class ToxActivity extends SimpleBaseGameActivity implements IAcceleration
 //	protected TiledTextureRegion mHexagonFaceTextureRegion;
 	protected PhysicsWorld mPhysicsWorld;
 	
-	private ToxFactory factory = new ToxFactory();
+	private PhewFactory factory = new PhewFactory();
 	
 	private Yokozuna myYokozuna;
 	private StupidHumanControl myControl;

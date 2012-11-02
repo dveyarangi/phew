@@ -1,4 +1,4 @@
-package zaki.yokozuna.controls;
+package org.gof.phew.game.controls;
 
 import static org.andengine.util.Constants.VERTEX_INDEX_X;
 import static org.andengine.util.Constants.VERTEX_INDEX_Y;

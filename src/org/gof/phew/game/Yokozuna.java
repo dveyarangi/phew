@@ -1,4 +1,4 @@
-package zaki.yokozuna;
+package org.gof.phew.game;
 
 import org.andengine.entity.Entity;
 import org.andengine.entity.sprite.Sprite;
