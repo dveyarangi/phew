@@ -1,0 +1,22 @@
+
+
+{
+	"name" : "Hello Word!",
+	"description" : "When you are attracted to, and eat, fruits, occasionally a seed will be carried within you to a fertile ground.", 
+	"shapes" : [
+		{ 
+			"name" : "testshape",
+			"location" : { "x" : 100, "y" : 100 },
+		    "vertices" : [
+		    	{"x" : 10, "y" : 20},
+		    	{"x" : 10, "y" : 20},
+		    	{"x" : 10, "y" : 20},
+		    	{"x" : 10, "y" : 20}
+		    	],
+		    "angle" : 0,
+			"anchor" : null,
+			"velocity" : null,
+			"momentum" : null
+		}]
+					    	
+}

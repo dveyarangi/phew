@@ -23,13 +23,14 @@ import org.andengine.opengl.texture.region.ITiledTextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.gof.phew.game.controls.AnalogOnScreenControl;
-import org.gof.phew.game.controls.BaseOnScreenControl;
 import org.gof.phew.game.controls.AnalogOnScreenControl.IAnalogOnScreenControlListener;
+import org.gof.phew.game.controls.BaseOnScreenControl;
+import org.gof.phew.shared.maze.Maze;
+import org.gof.phew.shared.maze.utils.IO;
 
 import android.view.Display;
 
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 
@@ -95,6 +96,10 @@ public class PhewActivity extends SimpleBaseGameActivity implements IAcceleratio
 
 	@Override
 	public void onCreateResources() {
+		
+		IO.init(this); // initialize game resources loader
+		
+		Maze maze = Maze.load("aaa", "00000000", "helloworld.json");
 		
 		factory.init( this );
 	}
